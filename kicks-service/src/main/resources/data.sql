@@ -1,0 +1,1 @@
+insert into KICKS (name,price) values ('Ultra Boost',200),('NMD',179),('Yeezy',220);

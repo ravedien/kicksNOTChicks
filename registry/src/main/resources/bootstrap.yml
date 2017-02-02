@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: registry
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+#      username: user
+#      password: config-service-secret
+#      password: ${CONFIG_SERVICE_PASSWORD}
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetchRegistry: false
+  server:
+    wait-time-in-ms-when-sync-empty: 0

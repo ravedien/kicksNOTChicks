@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+            
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+  
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  routes:
+    kicks-service:
+      path: /kicks/**
+      serviceId: kicks-service
+      stripPrefix: false
+      sensitiveHeaders:
+      
