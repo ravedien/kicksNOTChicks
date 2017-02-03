@@ -1,18 +1,2 @@
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 10000
-
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    serviceUrl:
-      defaultZone: http://config:8761/eureka/
-
-spring:
-  rabbitmq:
-    host: rabbitmq
+server:
+  port: 8009
