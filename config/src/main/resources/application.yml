@@ -12,5 +12,5 @@ server:
   
 security:
   user:
-    password: config-service-secret
+#    password: config-service-secret
 #    password: ${CONFIG_SERVICE_PASSWORD}

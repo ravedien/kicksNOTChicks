@@ -1,6 +1,7 @@
 server:
   port: 8080
 
+#1 : adjust the hystrix timeout setting of the ribbon load balancer
 hystrix:
   command:
     default:
@@ -12,7 +13,9 @@ hystrix:
 ribbon:
   ReadTimeout: 20000
   ConnectTimeout: 20000
+#1
   
+#2 : mapped the request coming the gatewayURL/api/kicks/1 to kicks-serviceURL/kicks/1
 zuul:
   prefix: /api
   ignoredServices: '*'
@@ -25,4 +28,10 @@ zuul:
       serviceId: kicks-service
       stripPrefix: false
       sensitiveHeaders:
+    kicks-inventory:
+      path: /inventory/**
+      serviceId: kicks-inventory
+      stripPrefix: false
+      sensitiveHeaders: 
+#2
       

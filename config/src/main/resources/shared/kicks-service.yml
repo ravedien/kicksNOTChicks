@@ -1,6 +1,7 @@
 server:
-  port: 8090
+  port: 0
   contextPath: /kicks
+  
 spring:
   h2:
     console:
@@ -8,10 +9,22 @@ spring:
       path: /console
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     show-sql: true
   datasource:
     url: jdbc:h2:~/test
     driverClassName: org.h2.Driver
     username: sa
-    password: 
+    password:
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false

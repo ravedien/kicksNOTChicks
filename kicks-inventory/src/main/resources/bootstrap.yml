@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gateway
+    name: kicks-inventory
 
 eureka:
   client:
